@@ -139,13 +139,13 @@ footer{padding:20px 40px;background:var(--ink);display:flex;justify-content:spac
 #storia{padding:90px 40px;background:var(–ink);position:relative;overflow:hidden;}
 #storia::before{content:’’;position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(200,149,42,.06) 0%,transparent 60%);}
 .storia-inner{max-width:760px;margin:0 auto;position:relative;z-index:1;text-align:center;}
-.storia-eyebrow{font-size:.58rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(–gold);margin-bottom:16px;}
-.storia-title{font-family:‘Playfair Display’,serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;color:var(–white);margin-bottom:32px;line-height:1.2;}
+.storia-eyebrow{font-size:.58rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:#c8952a;margin-bottom:16px;}
+.storia-title{font-family:‘Playfair Display’,serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;color:#ffffff;margin-bottom:32px;line-height:1.2;}
 .storia-title em{font-style:italic;font-weight:400;color:var(–gold);}
-.storia-text{font-size:.92rem;font-weight:300;color:rgba(255,255,255,.55);line-height:1.95;margin-bottom:18px;}
-.storia-text strong{color:rgba(255,255,255,.85);font-weight:500;}
+.storia-text{font-size:.92rem;font-weight:300;color:rgba(255,255,255,.7);line-height:1.95;margin-bottom:18px;}
+.storia-text strong{color:#ffffff;font-weight:500;}
 .storia-divider{width:40px;height:1px;background:var(–gold);margin:30px auto;}
-.storia-quote{font-family:‘Playfair Display’,serif;font-size:1.15rem;font-style:italic;color:var(–gold);line-height:1.7;opacity:.85;}
+.storia-quote{font-family:‘Playfair Display’,serif;font-size:1.15rem;font-style:italic;color:#c8952a;line-height:1.7;}
 </style>
 
 </head>
@@ -201,21 +201,21 @@ footer{padding:20px 40px;background:var(--ink);display:flex;justify-content:spac
 
 <section id="storia">
   <div class="storia-inner">
-    <div class="storia-eyebrow rv">La nostra storia</div>
-    <h2 class="storia-title rv">Un posto a <em>Davesco</em><br/>che sa di casa.</h2>
-    <p class="storia-text rv">
+    <div class="storia-eyebrow">La nostra storia</div>
+    <h2 class="storia-title">Un posto a <em>Davesco</em><br/>che sa di casa.</h2>
+    <p class="storia-text">
       Siamo a <strong>Davesco-Soragno</strong>, un piccolo angolo del Luganese dove la vita scorre ancora a ritmo umano.
       Al City è nato dall'idea semplice che i posti più belli non sono quelli con le luci più grandi —
       sono quelli dove torni la settimana dopo e trovi gli stessi amici seduti allo stesso tavolo.
     </p>
-    <p class="storia-text rv">
+    <p class="storia-text">
       Qui puoi mangiare una <strong>pizza fatta come si deve</strong>, giocare a biliardo fino a tardi,
       guardare la partita del <strong>Lugano</strong> sul grande schermo e bere qualcosa di buono.
       Tutto nello stesso posto, senza cerimonie.
     </p>
     <div class="storia-divider"></div>
-    <p class="storia-quote rv">
-      "Tra il Ticino e l'Italia, tra un birillo e una margherita,<br/>
+    <p class="storia-quote">
+      "Tra il Ticino e l'Italia, tra una pizza e una partita,<br/>
       c'è un posto dove l'amicizia si costruisce attorno a un tavolo."
     </p>
   </div>
@@ -492,8 +492,8 @@ function showTab(name, btn) {
   btn.classList.add('active');
 }
 const rvs = document.querySelectorAll('.rv,.rv-l');
-document.querySelectorAll('.bc,.mi').forEach((el,i) => { el.style.transitionDelay = (i * .04) + 's'; });
-const obs = new IntersectionObserver(e => { e.forEach(x => { if(x.isIntersecting) x.target.classList.add('on'); }); }, {threshold: 0.05});
+document.querySelectorAll('.mi').forEach((el,i) => { el.style.transitionDelay = (i * .03) + 's'; }); document.querySelectorAll('.bc').forEach((el,i) => { el.style.transitionDelay = (i * .1) + 's'; });
+const obs = new IntersectionObserver(e => { e.forEach(x => { if(x.isIntersecting) x.target.classList.add('on'); }); }, {threshold: 0.01, rootMargin: "0px 0px -50px 0px"});
 rvs.forEach(el => obs.observe(el));
 </script>
 
