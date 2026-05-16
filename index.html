@@ -14,30 +14,30 @@ html{scroll-behavior:smooth}
   --mid:#9a8870;--light:#ddd4c0;--border:#e8e0d0;
   --gold:#c8952a;--red:#cc2020;--white:#ffffff;
 }
-body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;overflow-x:hidden;}
-nav{position:fixed;top:0;left:0;right:0;z-index:500;height:70px;padding:0 40px;display:flex;justify-content:space-between;align-items:center;background:rgba(250,248,244,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+body{background:#faf8f4;color:#1c1814;font-family:'DM Sans',sans-serif;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;height:70px;padding:0 40px;display:flex;justify-content:space-between;align-items:center;background:rgba(250,248,244,.96);backdrop-filter:blur(12px);border-bottom:1px solid #e8e0d0;}
 .n-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
 .n-logo img{width:44px;height:44px;object-fit:cover;border-radius:50%;}
-.n-logo-text{font-family:'Playfair Display',serif;font-size:1.1rem;font-style:italic;color:var(--ink);}
+.n-logo-text{font-family:'Playfair Display',serif;font-size:1.1rem;font-style:italic;color:#1c1814;}
 .n-links{display:flex;gap:28px;}
-.n-link{font-size:.62rem;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color .2s;}
-.n-link:hover{color:var(--ink);}
-.n-cta{font-size:.62rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--white);background:var(--ink);padding:10px 22px;text-decoration:none;transition:background .2s;}
-.n-cta:hover{background:var(--brown);}
+.n-link{font-size:.62rem;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:#9a8870;text-decoration:none;transition:color .2s;}
+.n-link:hover{color:#1c1814;}
+.n-cta{font-size:.62rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#ffffff;background:#1c1814;padding:10px 22px;text-decoration:none;transition:background .2s;}
+.n-cta:hover{background:#5c4a32;}
 @media(max-width:700px){.n-links{display:none;}}
-#hero{min-height:100vh;padding-top:70px;display:flex;align-items:center;position:relative;overflow:hidden;background:var(--ink);}
+#hero{min-height:100vh;padding-top:70px;display:flex;align-items:center;position:relative;overflow:hidden;background:#1c1814;}
 #hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 60%,rgba(200,149,42,.07) 0%,transparent 55%),radial-gradient(ellipse at 80% 20%,rgba(200,149,42,.04) 0%,transparent 45%);}
 .hero-content{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;width:100%;min-height:calc(100vh - 70px);}
 .hero-left{display:flex;flex-direction:column;justify-content:center;padding:80px 60px;border-right:1px solid rgba(255,255,255,.06);}
-.h-eyebrow{display:flex;align-items:center;gap:10px;font-size:.58rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;opacity:0;animation:up .5s .2s forwards;}
-.h-eyebrow::before{content:'';width:20px;height:1px;background:var(--gold);}
-.h-title{font-family:'Playfair Display',serif;font-size:clamp(3.5rem,7vw,6.5rem);font-weight:700;line-height:.92;color:var(--white);opacity:0;animation:up .8s .4s forwards;}
-.h-title em{font-style:italic;font-weight:400;color:var(--gold);display:block;}
+.h-eyebrow{display:flex;align-items:center;gap:10px;font-size:.58rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#c8952a;margin-bottom:24px;opacity:0;animation:up .5s .2s forwards;}
+.h-eyebrow::before{content:'';width:20px;height:1px;background:#c8952a;}
+.h-title{font-family:'Playfair Display',serif;font-size:clamp(3.5rem,7vw,6.5rem);font-weight:700;line-height:.92;color:#ffffff;opacity:0;animation:up .8s .4s forwards;}
+.h-title em{font-style:italic;font-weight:400;color:#c8952a;display:block;}
 .h-tagline{font-size:.88rem;font-weight:300;color:rgba(255,255,255,.4);line-height:1.75;margin-top:24px;max-width:340px;opacity:0;animation:up .6s .6s forwards;}
 .h-tagline strong{color:rgba(255,255,255,.7);font-weight:400;}
 .h-pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:28px;opacity:0;animation:up .5s .8s forwards;}
 .pill{display:flex;align-items:center;gap:6px;font-size:.6rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.1);padding:7px 14px;}
-.h-btn{display:inline-flex;align-items:center;gap:10px;margin-top:36px;font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:14px 30px;text-decoration:none;box-shadow:0 8px 32px rgba(200,149,42,.25);transition:background .2s,transform .2s;opacity:0;animation:up .5s 1s forwards;}
+.h-btn{display:inline-flex;align-items:center;gap:10px;margin-top:36px;font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;background:#c8952a;color:#1c1814;padding:14px 30px;text-decoration:none;box-shadow:0 8px 32px rgba(200,149,42,.25);transition:background .2s,transform .2s;opacity:0;animation:up .5s 1s forwards;}
 .h-btn:hover{background:#a87824;transform:translateY(-2px);}
 .hero-right{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:80px 60px;position:relative;}
 .hero-right::before{content:'';position:absolute;width:320px;height:320px;border-radius:50%;border:1px solid rgba(200,149,42,.1);top:50%;left:50%;transform:translate(-50%,-50%);}
@@ -48,62 +48,62 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:70px;padding:0 40px;d
 .hero-stats{display:flex;gap:0;margin-top:36px;border:1px solid rgba(255,255,255,.08);border-radius:2px;overflow:hidden;opacity:0;animation:up .6s .9s forwards;}
 .hs{padding:14px 22px;text-align:center;border-right:1px solid rgba(255,255,255,.08);}
 .hs:last-child{border-right:none;}
-.hs-n{font-family:'Playfair Display',serif;font-size:1.4rem;font-style:italic;color:var(--gold);line-height:1;}
+.hs-n{font-family:'Playfair Display',serif;font-size:1.4rem;font-style:italic;color:#c8952a;line-height:1;}
 .hs-l{font-size:.52rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.2);margin-top:4px;}
 @media(max-width:760px){.hero-content{grid-template-columns:1fr;}.hero-left{padding:52px 28px;}.hero-right{padding:40px 28px;border-right:none;border-top:1px solid rgba(255,255,255,.06);}.logo-wrap img{width:180px;border-radius:50%;object-fit:cover;}}
-.strip{overflow:hidden;padding:13px 0;background:var(--gold);}
+.strip{overflow:hidden;padding:13px 0;background:#c8952a;}
 .strip-track{display:inline-flex;white-space:nowrap;animation:tk 16s linear infinite;}
 .sw{font-family:'Playfair Display',serif;font-style:italic;font-size:.88rem;color:rgba(28,24,20,.45);padding:0 26px;}
 .ss{color:rgba(28,24,20,.25);font-size:.55rem;}
 @keyframes tk{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-#menu{padding:100px 40px;background:var(--bg);}
+#menu{padding:100px 40px;background:#faf8f4;}
 .menu-inner{max-width:1000px;margin:0 auto;}
 .menu-header{text-align:center;margin-bottom:48px;}
-.menu-eyebrow{font-size:.58rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
-.menu-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:700;color:var(--ink);}
+.menu-eyebrow{font-size:.58rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:#c8952a;margin-bottom:10px;}
+.menu-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:700;color:#1c1814;}
 .menu-title em{font-style:italic;font-weight:400;}
-.menu-sub{font-size:.85rem;font-weight:300;color:var(--mid);margin-top:8px;}
-.tabs{display:flex;gap:0;border:1px solid var(--border);overflow:hidden;margin-bottom:40px;flex-wrap:wrap;}
-.tab{flex:1;min-width:100px;padding:13px 16px;font-size:.6rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);background:var(--white);border:none;cursor:pointer;border-right:1px solid var(--border);transition:background .2s,color .2s;display:flex;align-items:center;justify-content:center;gap:6px;}
+.menu-sub{font-size:.85rem;font-weight:300;color:#9a8870;margin-top:8px;}
+.tabs{display:flex;gap:0;border:1px solid #e8e0d0;overflow:hidden;margin-bottom:40px;flex-wrap:wrap;}
+.tab{flex:1;min-width:100px;padding:13px 16px;font-size:.6rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#9a8870;background:#ffffff;border:none;cursor:pointer;border-right:1px solid #e8e0d0;transition:background .2s,color .2s;display:flex;align-items:center;justify-content:center;gap:6px;}
 .tab:last-child{border-right:none;}
-.tab:hover{background:var(--bg2);color:var(--ink);}
-.tab.active{background:var(--ink);color:var(--white);}
+.tab:hover{background:#f3efe7;color:#1c1814;}
+.tab.active{background:#1c1814;color:#ffffff;}
 .panel{display:none;}
 .panel.active{display:block;}
 .menu-section{margin-bottom:36px;}
-.section-label{font-family:'Playfair Display',serif;font-size:1.1rem;font-style:italic;color:var(--gold);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border);}
-.menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);}
+.section-label{font-family:'Playfair Display',serif;font-size:1.1rem;font-style:italic;color:#c8952a;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #e8e0d0;}
+.menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e8e0d0;border:1px solid #e8e0d0;}
 @media(max-width:600px){.menu-grid{grid-template-columns:1fr}}
-.mi{background:var(--white);padding:18px 22px;display:flex;justify-content:space-between;align-items:flex-start;gap:14px;transition:background .2s;}
-.mi:hover{background:var(--bg2);}
-.mi-name{font-size:.9rem;font-weight:500;color:var(--ink);margin-bottom:3px;}
-.mi-desc{font-size:.72rem;font-weight:300;color:var(--mid);line-height:1.4;}
-.mi-badge{font-size:.52rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(200,149,42,.3);padding:2px 7px;display:inline-block;margin-top:5px;}
-.mi-badge.spicy{color:var(--red);border-color:rgba(204,32,32,.3);}
+.mi{background:#ffffff;padding:18px 22px;display:flex;justify-content:space-between;align-items:flex-start;gap:14px;transition:background .2s;}
+.mi:hover{background:#f3efe7;}
+.mi-name{font-size:.9rem;font-weight:500;color:#1c1814;margin-bottom:3px;}
+.mi-desc{font-size:.72rem;font-weight:300;color:#9a8870;line-height:1.4;}
+.mi-badge{font-size:.52rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#c8952a;border:1px solid rgba(200,149,42,.3);padding:2px 7px;display:inline-block;margin-top:5px;}
+.mi-badge.spicy{color:#cc2020;border-color:rgba(204,32,32,.3);}
 .mi-badge.veg{color:#4caf50;border-color:rgba(76,175,80,.3);}
-.mi-price{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--gold);white-space:nowrap;flex-shrink:0;}
-.menu-note{font-size:.72rem;font-weight:300;color:var(--mid);font-style:italic;text-align:center;margin-top:14px;}
-.suppl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);}
-.suppl{background:var(--white);padding:12px 18px;display:flex;justify-content:space-between;align-items:center;gap:10px;}
-.suppl-name{font-size:.78rem;font-weight:400;color:var(--ink);}
-.suppl-price{font-size:.78rem;color:var(--gold);font-weight:500;white-space:nowrap;}
-#biliardo{padding:100px 40px;background:var(--ink);position:relative;overflow:hidden;}
+.mi-price{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:#c8952a;white-space:nowrap;flex-shrink:0;}
+.menu-note{font-size:.72rem;font-weight:300;color:#9a8870;font-style:italic;text-align:center;margin-top:14px;}
+.suppl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:#e8e0d0;border:1px solid #e8e0d0;}
+.suppl{background:#ffffff;padding:12px 18px;display:flex;justify-content:space-between;align-items:center;gap:10px;}
+.suppl-name{font-size:.78rem;font-weight:400;color:#1c1814;}
+.suppl-price{font-size:.78rem;color:#c8952a;font-weight:500;white-space:nowrap;}
+#biliardo{padding:100px 40px;background:#1c1814;position:relative;overflow:hidden;}
 #biliardo::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 10% 90%,rgba(200,149,42,.06) 0%,transparent 50%),radial-gradient(ellipse at 90% 10%,rgba(200,149,42,.04) 0%,transparent 40%);}
 .bil-inner{max-width:1000px;margin:0 auto;position:relative;z-index:1;}
 .bil-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;flex-wrap:wrap;gap:20px;}
-.bil-eyebrow{font-size:.58rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
-.bil-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:700;color:var(--white);}
-.bil-title em{font-style:italic;font-weight:400;color:var(--gold);}
+.bil-eyebrow{font-size:.58rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:#c8952a;margin-bottom:10px;}
+.bil-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:700;color:#ffffff;}
+.bil-title em{font-style:italic;font-weight:400;color:#c8952a;}
 .bil-sub{font-size:.85rem;font-weight:300;color:rgba(255,255,255,.3);max-width:260px;line-height:1.65;text-align:right;}
 .bil-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);}
 @media(max-width:900px){.bil-cards{grid-template-columns:1fr 1fr}}@media(max-width:500px){.bil-cards{grid-template-columns:1fr}}
-.bc{background:var(--ink);padding:40px 32px;transition:background .25s;}
+.bc{background:#1c1814;padding:40px 32px;transition:background .25s;}
 .bc:hover{background:#201c16;}
 .bc-icon{font-size:1.8rem;margin-bottom:14px;}
-.bc-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-style:italic;color:var(--white);margin-bottom:8px;}
+.bc-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-style:italic;color:#ffffff;margin-bottom:8px;}
 .bc-body{font-size:.84rem;font-weight:300;color:rgba(255,255,255,.28);line-height:1.7;}
-.bc-badge{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:.52rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(200,149,42,.22);padding:4px 10px;}
-#sport{padding:80px 40px;background:var(--red);text-align:center;position:relative;overflow:hidden;}
+.bc-badge{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:.52rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:#c8952a;border:1px solid rgba(200,149,42,.22);padding:4px 10px;}
+#sport{padding:80px 40px;background:#cc2020;text-align:center;position:relative;overflow:hidden;}
 #sport::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 20px,rgba(0,0,0,.04) 20px,rgba(0,0,0,.04) 21px);}
 .sport-inner{position:relative;z-index:1;}
 .sport-live{display:inline-flex;align-items:center;gap:8px;font-size:.58rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:14px;}
@@ -115,18 +115,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:70px;padding:0 40px;d
 .sport-icons{display:flex;justify-content:center;gap:36px;margin-top:28px;flex-wrap:wrap;}
 .si-item{font-size:.62rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);display:flex;flex-direction:column;align-items:center;gap:6px;}
 .si-icon{font-size:1.6rem;}
-#prenota{padding:100px 40px;background:var(--bg2);border-top:1px solid var(--border);text-align:center;}
+#prenota{padding:100px 40px;background:#f3efe7;border-top:1px solid #e8e0d0;text-align:center;}
 .cta-inner{max-width:520px;margin:0 auto;}
 .cta-logo{width:80px;height:80px;margin:0 auto 22px;border-radius:50%;object-fit:cover;display:block;}
-.cta-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:700;color:var(--ink);margin-bottom:12px;}
+.cta-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:700;color:#1c1814;margin-bottom:12px;}
 .cta-title em{font-style:italic;font-weight:400;}
-.cta-sub{font-size:.88rem;font-weight:300;color:var(--mid);line-height:1.75;margin-bottom:28px;}
-.cta-sub strong{color:var(--ink);font-weight:400;}
-.cta-number{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,4vw,2.5rem);font-weight:700;font-style:italic;color:var(--ink);margin-bottom:18px;}
-.cta-btn{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--white);padding:16px 40px;font-size:.7rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;transition:background .2s,transform .2s;}
-.cta-btn:hover{background:var(--brown);transform:translateY(-2px);}
-.cta-detail{font-size:.6rem;font-weight:300;color:var(--mid);margin-top:14px;letter-spacing:.1em;}
-footer{padding:20px 40px;background:var(--ink);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;border-top:1px solid rgba(255,255,255,.06);}
+.cta-sub{font-size:.88rem;font-weight:300;color:#9a8870;line-height:1.75;margin-bottom:28px;}
+.cta-sub strong{color:#1c1814;font-weight:400;}
+.cta-number{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,4vw,2.5rem);font-weight:700;font-style:italic;color:#1c1814;margin-bottom:18px;}
+.cta-btn{display:inline-flex;align-items:center;gap:10px;background:#1c1814;color:#ffffff;padding:16px 40px;font-size:.7rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;transition:background .2s,transform .2s;}
+.cta-btn:hover{background:#5c4a32;transform:translateY(-2px);}
+.cta-detail{font-size:.6rem;font-weight:300;color:#9a8870;margin-top:14px;letter-spacing:.1em;}
+footer{padding:20px 40px;background:#1c1814;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;border-top:1px solid rgba(255,255,255,.06);}
 .fl{font-family:'Playfair Display',serif;font-style:italic;font-size:.9rem;color:rgba(255,255,255,.22);}
 .fc{font-size:.56rem;font-weight:300;color:rgba(255,255,255,.12);letter-spacing:.08em;}
 .rv{opacity:0;transform:translateY(22px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1);}
@@ -136,15 +136,15 @@ footer{padding:20px 40px;background:var(--ink);display:flex;justify-content:spac
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 @media(max-width:600px){nav{padding:0 20px;}#menu,#biliardo,#sport,#prenota{padding:80px 24px;}.tabs .tab{padding:11px 10px;font-size:.56rem;min-width:80px;}}
 
-#storia{padding:90px 40px;background:var(–ink);position:relative;overflow:hidden;}
+#storia{padding:90px 40px;background:#1c1814;position:relative;overflow:hidden;}
 #storia::before{content:’’;position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(200,149,42,.06) 0%,transparent 60%);}
 .storia-inner{max-width:760px;margin:0 auto;position:relative;z-index:1;text-align:center;}
 .storia-eyebrow{font-size:.58rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:#c8952a;margin-bottom:16px;}
 .storia-title{font-family:‘Playfair Display’,serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;color:#ffffff;margin-bottom:32px;line-height:1.2;}
-.storia-title em{font-style:italic;font-weight:400;color:var(–gold);}
+.storia-title em{font-style:italic;font-weight:400;color:#c8952a;}
 .storia-text{font-size:.92rem;font-weight:300;color:rgba(255,255,255,.7);line-height:1.95;margin-bottom:18px;}
 .storia-text strong{color:#ffffff;font-weight:500;}
-.storia-divider{width:40px;height:1px;background:var(–gold);margin:30px auto;}
+.storia-divider{width:40px;height:1px;background:#c8952a;margin:30px auto;}
 .storia-quote{font-family:‘Playfair Display’,serif;font-size:1.15rem;font-style:italic;color:#c8952a;line-height:1.7;}
 </style>
 
@@ -445,10 +445,10 @@ footer{padding:20px 40px;background:var(--ink);display:flex;justify-content:spac
       <p class="bil-sub rv">Tavoli professionali disponibili durante tutto l'orario di apertura.</p>
     </div>
     <div class="bil-cards">
-      <div class="bc rv"><div class="bc-icon">🎱</div><div class="bc-title">Biliardo Normale</div><div class="bc-body">Tavolo classico, ideale per una partita tra amici.</div><div style="margin-top:16px;display:flex;align-items:baseline;gap:8px;"><span style="font-family:'Playfair Display',serif;font-size:2rem;font-style:italic;color:var(--gold);">16</span><span style="font-size:.7rem;font-weight:300;color:rgba(255,255,255,.3);letter-spacing:.1em;text-transform:uppercase;">CHF / ora</span></div><div class="bc-badge">Si ordina alla cassa</div></div>
-      <div class="bc rv"><div class="bc-icon">🎯</div><div class="bc-title">Biliardo Professionale</div><div class="bc-body">Buche più piccole, panno di qualità superiore.</div><div style="margin-top:16px;display:flex;align-items:baseline;gap:8px;"><span style="font-family:'Playfair Display',serif;font-size:2rem;font-style:italic;color:var(--gold);">18</span><span style="font-size:.7rem;font-weight:300;color:rgba(255,255,255,.3);letter-spacing:.1em;text-transform:uppercase;">CHF / ora</span></div><div class="bc-badge">Si ordina alla cassa</div></div>
-      <div class="bc rv"><div class="bc-icon">🎱</div><div class="bc-title">Snooker</div><div class="bc-body">Tavolo da snooker professionale con buche e panno da competizione.</div><div style="margin-top:16px;display:flex;align-items:baseline;gap:8px;"><span style="font-family:'Playfair Display',serif;font-size:2rem;font-style:italic;color:var(--gold);">22</span><span style="font-size:.7rem;font-weight:300;color:rgba(255,255,255,.3);letter-spacing:.1em;text-transform:uppercase;">CHF / ora</span></div><div class="bc-badge">Si ordina alla cassa</div></div>
-      <div class="bc rv"><div class="bc-icon">⚪</div><div class="bc-title">Italiano / Carambola</div><div class="bc-body">Il biliardo italiano a tre birilli.</div><div style="margin-top:16px;display:flex;align-items:baseline;gap:8px;"><span style="font-family:'Playfair Display',serif;font-size:2rem;font-style:italic;color:var(--gold);">20</span><span style="font-size:.7rem;font-weight:300;color:rgba(255,255,255,.3);letter-spacing:.1em;text-transform:uppercase;">CHF / ora</span></div><div class="bc-badge">Si ordina alla cassa</div></div>
+      <div class="bc rv"><div class="bc-icon">🎱</div><div class="bc-title">Biliardo Normale</div><div class="bc-body">Tavolo classico, ideale per una partita tra amici.</div><div style="margin-top:16px;display:flex;align-items:baseline;gap:8px;"><span style="font-family:'Playfair Display',serif;font-size:2rem;font-style:italic;color:#c8952a;">16</span><span style="font-size:.7rem;font-weight:300;color:rgba(255,255,255,.3);letter-spacing:.1em;text-transform:uppercase;">CHF / ora</span></div><div class="bc-badge">Si ordina alla cassa</div></div>
+      <div class="bc rv"><div class="bc-icon">🎯</div><div class="bc-title">Biliardo Professionale</div><div class="bc-body">Buche più piccole, panno di qualità superiore.</div><div style="margin-top:16px;display:flex;align-items:baseline;gap:8px;"><span style="font-family:'Playfair Display',serif;font-size:2rem;font-style:italic;color:#c8952a;">18</span><span style="font-size:.7rem;font-weight:300;color:rgba(255,255,255,.3);letter-spacing:.1em;text-transform:uppercase;">CHF / ora</span></div><div class="bc-badge">Si ordina alla cassa</div></div>
+      <div class="bc rv"><div class="bc-icon">🎱</div><div class="bc-title">Snooker</div><div class="bc-body">Tavolo da snooker professionale con buche e panno da competizione.</div><div style="margin-top:16px;display:flex;align-items:baseline;gap:8px;"><span style="font-family:'Playfair Display',serif;font-size:2rem;font-style:italic;color:#c8952a;">22</span><span style="font-size:.7rem;font-weight:300;color:rgba(255,255,255,.3);letter-spacing:.1em;text-transform:uppercase;">CHF / ora</span></div><div class="bc-badge">Si ordina alla cassa</div></div>
+      <div class="bc rv"><div class="bc-icon">⚪</div><div class="bc-title">Italiano / Carambola</div><div class="bc-body">Il biliardo italiano a tre birilli.</div><div style="margin-top:16px;display:flex;align-items:baseline;gap:8px;"><span style="font-family:'Playfair Display',serif;font-size:2rem;font-style:italic;color:#c8952a;">20</span><span style="font-size:.7rem;font-weight:300;color:rgba(255,255,255,.3);letter-spacing:.1em;text-transform:uppercase;">CHF / ora</span></div><div class="bc-badge">Si ordina alla cassa</div></div>
     </div>
   </div>
 </section>
