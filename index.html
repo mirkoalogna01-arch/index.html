@@ -337,6 +337,7 @@ footer{padding:18px 40px;background:#0d1b2a;display:flex;justify-content:space-b
       <div class="h-tag">🇨🇭 Davesco-Soragno · Lugano</div>
       <h1 class="h-title">al<br/><em>City.</em></h1>
       <p class="h-sub">Mangia bene, gioca a biliardo, <strong>guarda la partita.</strong> Tutto in un posto solo.</p>
+        <p id="hNow" class="h-now"></p>
       <div class="h-pills">
         <a href="#menu" class="pill" style="text-decoration:none;cursor:pointer;" onclick="setTimeout(()=>document.querySelector('.tab[onclick*=pizze]').click(),400)">🍕 Pizzeria</a>
         <a href="#menu" class="pill" style="text-decoration:none;cursor:pointer;">🍔 Hamburger</a>
@@ -653,6 +654,7 @@ footer{padding:18px 40px;background:#0d1b2a;display:flex;justify-content:space-b
   <div class="bil-inner">
     <div class="sec-eye rv">Nel locale</div>
     <h2 class="sec-title" style="color:#ffffff;text-shadow:0 2px 12px rgba(0,0,0,.7)">Biliardo <em style="color:#f0c674">sempre</em> disponibile.</h2>
+    <div id="bilPlayWrap"><canvas id="poolCanvas"></canvas><div class="bil-hint">Mira col mouse · clicca per tirare 🎱</div></div>
     <div class="bil-cards rv">
       <div class="bc" onclick="this.classList.toggle('flipped')">
         <div class="bc-inner">
@@ -874,20 +876,18 @@ function updateStatus(){
   const h=now.getHours();
   const m=now.getMinutes();
   const time=h*60+m;
-  let open=false;
-  // Mon-Thu (1-4): 06:00-24:00
-  if(day>=1&&day<=4){open=time>=360&&time<1440}
-  // Fri (5): 06:00-01:00 next day
-  if(day===5){open=time>=360}
-  // Sat (6): 15:00-01:00 (+ before 01:00 carried over from Friday night)
-  if(day===6){open=(time>=900)||(time<60)}
-  // Sun (0): 15:00-24:00 (+ before 01:00 carried over from Saturday night)
-  if(day===0){open=(time>=900&&time<1440)||(time<60)}
+  let rem=null; // minuti alla chiusura, null = chiuso
+  if(day>=1&&day<=4){ if(time>=360&&time<1440) rem=1440-time; }
+  if(day===5){ if(time>=360) rem=1500-time; }
+  if(day===6){ if(time>=900) rem=1500-time; else if(time<60) rem=60-time; }
+  if(day===0){ if(time>=900&&time<1440) rem=1440-time; else if(time<60) rem=60-time; }
+  const open=rem!==null;
   const badge=document.getElementById('status-badge');
   const txt=document.getElementById('status-text');
   if(badge&&txt){
     badge.className='status-badge '+(open?'open':'closed');
-    txt.textContent=open?'Aperto ora':'Chiuso';
+    if(open){ let l; if(rem>90) l='chiude tra ~'+Math.round(rem/60)+'h'; else if(rem>1) l='chiude tra '+rem+' min'; else l='in chiusura'; txt.textContent='Aperto \u00b7 '+l; }
+    else txt.textContent='Chiuso';
   }
 }
 updateStatus();
@@ -953,5 +953,48 @@ if(!localStorage.getItem('cookie_consent')){
   </div>
 </div>
 
+<style>.h-now{margin-top:14px;font-family:'DM Sans',sans-serif;font-weight:500;font-size:clamp(.92rem,1.6vw,1.12rem);color:#f4d98c;display:inline-flex;align-items:center;gap:.5rem;background:rgba(212,168,67,.14);border:1px solid rgba(212,168,67,.55);padding:.55rem 1.05rem;border-radius:100px;position:relative;z-index:2}</style>
+<script>(function(){var el=document.getElementById('hNow');if(!el)return;function set(){var hh=new Date().getHours();var sera=(hh>=18||hh<3);el.textContent=sera?'🎱 Stasera: biliardo e la partita in diretta':'🍕 A pranzo: pizza, hamburger e i nostri primi';}set();setInterval(set,60000);})();</script>
+<style>
+#bilPlayWrap{max-width:760px;margin:2px auto 34px;position:relative}
+#poolCanvas{width:100%;height:190px;display:block;border-radius:14px;box-shadow:0 14px 34px rgba(0,0,0,.45);cursor:crosshair;touch-action:none;background:#0c5a38}
+.bil-hint{text-align:center;color:rgba(255,255,255,.62);font-size:.72rem;letter-spacing:.06em;margin-top:9px;font-family:'DM Sans',sans-serif}
+@media(max-width:600px){#poolCanvas{height:150px}}
+</style>
+<script>/*bilEngine*/(function(){
+var cv=document.getElementById('poolCanvas'); if(!cv) return;
+var ctx=cv.getContext('2d'); var R=9,W=0,H=0,mx=0,my=0,balls=[],racking=false;
+function rr(x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
+function pockets(){return [[12,12],[W/2,9],[W-12,12],[12,H-12],[W/2,H-9],[W-12,H-12]];}
+function reset(){var cue={x:W*0.28,y:H/2,vx:0,vy:0,c:'#fbfbf5',cue:true};balls=[cue];var cols=['#d4a843','#c0392b','#2f6fb0','#27ae60','#e08a2b','#8e44ad'];var sx=W*0.66,sy=H/2,i=0;for(var col=0;col<3;col++){for(var row=0;row<=col;row++){balls.push({x:sx+col*(R*1.85),y:sy-(col*R)+row*(R*2),vx:0,vy:0,c:cols[i%cols.length]});i++;}}}
+function fit(){var r=cv.getBoundingClientRect();cv.width=Math.max(320,r.width);cv.height=r.height||190;W=cv.width;H=cv.height;reset();}
+cv.addEventListener('mousemove',function(e){var r=cv.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top;});
+function shoot(tx,ty){var cue=balls[0];if(!cue||Math.hypot(cue.vx,cue.vy)>0.4)return;var dx=tx-cue.x,dy=ty-cue.y,d=Math.hypot(dx,dy)||1;var p=Math.min(d/26,7.5);cue.vx=dx/d*p;cue.vy=dy/d*p;}
+cv.addEventListener('click',function(e){var r=cv.getBoundingClientRect();shoot(e.clientX-r.left,e.clientY-r.top);});
+cv.addEventListener('touchstart',function(e){var t=e.touches[0];var r=cv.getBoundingClientRect();mx=t.clientX-r.left;my=t.clientY-r.top;shoot(mx,my);e.preventDefault();},{passive:false});
+function collide(a,b){var dx=b.x-a.x,dy=b.y-a.y,d=Math.hypot(dx,dy);if(d>0&&d<R*2){var nx=dx/d,ny=dy/d;var p=(a.vx*nx+a.vy*ny)-(b.vx*nx+b.vy*ny);if(p>0){a.vx-=p*nx;a.vy-=p*ny;b.vx+=p*nx;b.vy+=p*ny;}var ov=(R*2-d)/2;a.x-=nx*ov;a.y-=ny*ov;b.x+=nx*ov;b.y+=ny*ov;}}
+function loop(){
+ ctx.clearRect(0,0,W,H);
+ ctx.fillStyle='#0c5a38';rr(4,4,W-8,H-8,12);ctx.fill();
+ var pk=pockets();for(var i=0;i<pk.length;i++){ctx.beginPath();ctx.arc(pk[i][0],pk[i][1],11,0,7);ctx.fillStyle='#04140c';ctx.fill();}
+ ctx.lineWidth=3;ctx.strokeStyle='rgba(212,168,67,.55)';rr(4,4,W-8,H-8,12);ctx.stroke();
+ var cue=balls[0],moving=cue&&Math.hypot(cue.vx,cue.vy)>0.4;
+ if(cue&&!moving){
+   ctx.setLineDash([4,6]);ctx.strokeStyle='rgba(255,255,255,.45)';ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(cue.x,cue.y);ctx.lineTo(mx,my);ctx.stroke();ctx.setLineDash([]);
+   var dx=mx-cue.x,dy=my-cue.y,d=Math.hypot(dx,dy)||1;
+   ctx.strokeStyle='#caa16b';ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(cue.x-dx/d*18,cue.y-dy/d*18);ctx.lineTo(cue.x-dx/d*130,cue.y-dy/d*130);ctx.stroke();
+ }
+ for(var i=0;i<balls.length;i++){var b=balls[i];b.x+=b.vx;b.y+=b.vy;b.vx*=0.985;b.vy*=0.985;if(Math.abs(b.vx)<0.02)b.vx=0;if(Math.abs(b.vy)<0.02)b.vy=0;
+   if(b.x<4+R){b.x=4+R;b.vx*=-0.88;}if(b.x>W-4-R){b.x=W-4-R;b.vx*=-0.88;}
+   if(b.y<4+R){b.y=4+R;b.vy*=-0.88;}if(b.y>H-4-R){b.y=H-4-R;b.vy*=-0.88;}}
+ for(var i=0;i<balls.length;i++)for(var j=i+1;j<balls.length;j++)collide(balls[i],balls[j]);
+ var keep=[];for(var i=0;i<balls.length;i++){var b=balls[i],gone=false;for(var k=0;k<pk.length;k++){if(Math.hypot(b.x-pk[k][0],b.y-pk[k][1])<12){gone=true;break;}}if(gone){if(b.cue){b.x=W*0.28;b.y=H/2;b.vx=0;b.vy=0;keep.push(b);}}else keep.push(b);}
+ balls=keep;
+ if(balls.length<=1&&!racking){racking=true;setTimeout(function(){reset();racking=false;},800);}
+ for(var i=0;i<balls.length;i++){var b=balls[i];ctx.beginPath();ctx.arc(b.x,b.y,R,0,7);ctx.fillStyle=b.c;ctx.fill();ctx.strokeStyle='rgba(0,0,0,.18)';ctx.lineWidth=1;ctx.stroke();if(b.cue){ctx.beginPath();ctx.arc(b.x-3,b.y-3,2.4,0,7);ctx.fillStyle='rgba(255,255,255,.7)';ctx.fill();}}
+ requestAnimationFrame(loop);
+}
+window.addEventListener('resize',fit);fit();loop();
+})();</script>
 </body>
 </html>
