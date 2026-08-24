@@ -123,7 +123,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:64px;padding:0 32px;d
 #recensioni::after{content:'';position:absolute;bottom:0;left:0;right:0;height:100px;background:linear-gradient(to bottom,transparent,rgba(5,12,25,.95));z-index:1}
 #recensioni{padding:80px 40px;background:url("img/d1afc947cf.jpg") center/cover no-repeat;position:relative}
 .rec-inner{max-width:1000px;margin:0 auto;position:relative;z-index:1}
-.rec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.rec-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:40px;max-width:720px;margin-left:auto;margin-right:auto}
 @media(max-width:700px){.rec-grid{grid-template-columns:1fr}}
 .rec-card{background:rgba(255,255,255,.05);padding:28px;border:1px solid rgba(255,255,255,.08)}
 .rec-stars{color:#d4a843;font-size:.95rem;margin-bottom:12px;letter-spacing:2px}
@@ -344,7 +344,7 @@ footer{padding:18px 40px;background:#0d1b2a;display:flex;justify-content:space-b
 
 <div style="background:linear-gradient(135deg,#0a1628 0%,#1a3a6b 50%,#0a1628 100%);padding:14px 20px;text-align:center;border-bottom:1px solid rgba(212,168,67,.3);">
   <p style="font-size:.75rem;font-weight:500;color:#ffffff;letter-spacing:.05em;">
-    🍂 <strong style="color:#d4a843;">Siete pronti per l'autunno?</strong> — Serate più lunghe, tavoli caldi e la partita in diretta
+    🍂 <strong style="color:#d4a843;">Siete pronti per l'autunno?</strong> — Serate più lunghe, tavoli caldi e la <strong style="color:#d4a843;">Fondue Chinoise in arrivo</strong>
     <a href="#autunno" style="color:#d4a843;font-weight:700;text-decoration:none;margin-left:6px;">Scopri di più →</a>
   </p>
 </div>
@@ -490,7 +490,6 @@ footer{padding:18px 40px;background:#0d1b2a;display:flex;justify-content:space-b
         <div class="mi"><div><div class="mi-name">Carne alla Pioda</div><div class="mi-desc">Min. 2 persone · 3 tipi di carne 70g cad., 3 salse fatte in casa, patatine fritte</div><div class="mi-badge">👥 Per 2+</div></div><div class="mi-price">38.50</div></div>
         <div class="mi"><div><div class="mi-name">Ribeye</div><div class="mi-desc">250g manzo alla griglia con Café de Paris, contorno a scelta</div><div class="mi-badge">🥩 Premium</div></div><div class="mi-price">38.50</div></div>
         <div class="mi"><div><div class="mi-name">Grigliata Mista</div><div class="mi-desc">Selezione di carni miste alla griglia — solo su prenotazione previa</div><div class="mi-badge">📞 Solo su prenotazione</div></div><div style="display:flex;align-items:center;gap:8px;flex-shrink:0;"><div class="mi-price">p.c.</div><img loading="lazy" decoding="async" class="mi-photo" src="img/72611db10c.jpg" alt="Grigliata Mista"/></div></div>
-          <div class="mi"><div><div class="mi-name">Le Nostre Mitiche Puntine</div><div class="mi-desc">500g con contorno — venerdì e sabato sera, 30 min. attesa</div><div class="mi-badge">📅 Ven/Sab</div></div><div style="display:flex;align-items:center;gap:8px;flex-shrink:0;"><div class="mi-price">32.50</div><img loading="lazy" decoding="async" class="mi-photo" src="img/1816ef6b5a.jpg" alt="Le Nostre Mitiche Puntine"/></div></div>
       </div></div>
     </div>
 
@@ -652,12 +651,6 @@ footer{padding:18px 40px;background:#0d1b2a;display:flex;justify-content:space-b
       </div>
       <div class="rec-card">
         <div class="rec-stars">★★★★★</div>
-        <p class="rec-text">"Le puntine del venerdì sono una cosa seria — abbiamo aspettato 30 minuti come dicevano e ne è valsa assolutamente la pena. Ambiente rilassato, prezzi onesti. Il nostro posto preferito a Davesco."</p>
-        <div class="rec-author">Giulia & Lorenzo</div>
-        <div class="rec-source">Google · Davesco-Soragno</div>
-      </div>
-      <div class="rec-card">
-        <div class="rec-stars">★★★★★</div>
         <p class="rec-text">"Finalmente un posto dove si può fare tutto: mangiare bene, giocare a biliardo e guardare la partita. Il City Smash è il miglior hamburger della zona, punto."</p>
         <div class="rec-author">Davide M.</div>
         <div class="rec-source">Google · Lugano</div>
@@ -764,9 +757,9 @@ footer{padding:18px 40px;background:#0d1b2a;display:flex;justify-content:space-b
     <p class="rv" style="text-align:center;font-size:.86rem;font-weight:300;color:rgba(255,255,255,.6);max-width:520px;margin:0 auto;line-height:1.8;">Le giornate si accorciano, le serate si allungano. Da noi si sta al caldo, si mangia bene e non si va mai di fretta.</p>
     <div class="aut-grid rv">
       <div class="aut-card">
-        <div class="aut-icon">🍂</div>
-        <div class="aut-title">Sapori della stagione</div>
-        <div class="aut-text">Piatti caldi, <strong>puntine il venerdì e il sabato</strong>, pizze appena sfornate e il pollo al cestello. Comfort food come si deve.</div>
+        <div class="aut-icon">🍲</div>
+        <div class="aut-title">Fondue Chinoise in arrivo</div>
+        <div class="aut-text">La stagione della <strong>chinoise</strong> sta per cominciare. Nel frattempo piatti caldi, pizze appena sfornate e il pollo al cestello.</div>
       </div>
       <div class="aut-card">
         <div class="aut-icon">🎱</div>
@@ -837,9 +830,6 @@ footer{padding:18px 40px;background:#0d1b2a;display:flex;justify-content:space-b
         <div class="irow"><span>Venerdì</span><strong>06:00 – 01:00</strong></div>
         <div class="irow"><span>Sabato</span><strong>15:00 – 01:00</strong></div>
         <div class="irow"><span>Domenica</span><strong>15:00 – 24:00</strong></div>
-        <div style="margin-top:14px;padding:12px;background:rgba(200,149,42,.1);border-left:2px solid #d4a843;">
-          <p style="font-size:.72rem;color:rgba(255,255,255,.5);line-height:1.7;">🍖 <strong style="color:#ffffff;">Puntine:</strong> solo ven. e sab. sera<br/>⏱ 30 min. di attesa — ne vale la pena</p>
-        </div>
       </div>
       <div class="icard">
         <div class="icard-icon">📞</div>
