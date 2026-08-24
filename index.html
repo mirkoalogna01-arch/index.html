@@ -51,6 +51,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:64px;padding:0 32px;d
 .h-sub strong{color:#ffffff;font-weight:700}
 .h-pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:26px;opacity:0;animation:up .5s .8s forwards}
 .pill{font-size:.58rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.1);padding:6px 12px}
+.pill.pill-season{color:#f0c674;border-color:rgba(212,168,67,.45);background:rgba(212,168,67,.1)}
 .h-btn{display:inline-flex;align-items:center;gap:8px;margin-top:32px;font-size:.68rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;background:#d4a843;color:#0d1b2a;padding:14px 28px;text-decoration:none;transition:background .2s,transform .2s;opacity:0;animation:up .5s 1s forwards}
 .h-btn:hover{background:#a87824;transform:translateY(-2px)}
 .hero-r{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:70px 56px;position:relative}
@@ -171,6 +172,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:64px;padding:0 32px;d
 .si-item{font-size:.6rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#ffffff;display:flex;flex-direction:column;align-items:center;gap:5px;text-shadow:0 1px 8px rgba(0,0,0,.8)}
 .si-icon{font-size:1.5rem}
 
+/* AUTUNNO */
+#autunno{padding:88px 40px;background:linear-gradient(165deg,#0a1220 0%,#122032 55%,#0d1b2a 100%);position:relative;overflow:hidden}
+#autunno::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 15% 20%,rgba(212,168,67,.1) 0%,transparent 55%),radial-gradient(ellipse at 85% 80%,rgba(212,168,67,.06) 0%,transparent 50%);z-index:0}
+.aut-inner{max-width:1000px;margin:0 auto;position:relative;z-index:1}
+.aut-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:42px}
+@media(max-width:800px){.aut-grid{grid-template-columns:1fr}}
+.aut-card{background:rgba(255,255,255,.04);border:1px solid rgba(212,168,67,.22);padding:30px 26px;transition:background .25s,transform .25s}
+.aut-card:hover{background:rgba(212,168,67,.08);transform:translateY(-3px)}
+.aut-icon{font-size:1.6rem;margin-bottom:12px}
+.aut-title{font-family:'Playfair Display',serif;font-size:1.1rem;font-style:italic;color:#d4a843;margin-bottom:10px}
+.aut-text{font-size:.82rem;font-weight:300;color:rgba(255,255,255,.62);line-height:1.8}
+.aut-text strong{color:#ffffff;font-weight:500}
+.aut-cta{text-align:center;margin-top:38px}
+.aut-cta a{display:inline-flex;align-items:center;gap:8px;background:#d4a843;color:#0d1b2a;padding:14px 32px;font-size:.66rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;transition:background .2s,transform .2s}
+.aut-cta a:hover{background:#a87824;transform:translateY(-2px)}
+.aut-note{font-size:.68rem;color:rgba(255,255,255,.3);margin-top:14px;font-style:italic}
+
 /* INFO */
 #info::before{content:'';position:absolute;inset:0;background:rgba(5,12,25,.82);z-index:0}
 #info::after{content:'';position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(to bottom,transparent,rgba(5,12,25,.85));z-index:1}
@@ -246,7 +264,7 @@ footer{padding:18px 40px;background:#0d1b2a;display:flex;justify-content:space-b
 .rv.on{opacity:1;transform:none}
 @keyframes up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
-@media(max-width:600px){nav{padding:0 16px}#menu,#biliardo,#sport,#prenota,#info,#storia,#recensioni{padding:60px 20px}.tabs .tab{padding:10px 8px;font-size:.54rem;min-width:70px}}
+@media(max-width:600px){nav{padding:0 16px}#menu,#biliardo,#sport,#prenota,#info,#storia,#recensioni,#autunno{padding:60px 20px}.tabs .tab{padding:10px 8px;font-size:.54rem;min-width:70px}}
 
 .wa-btn{position:fixed;bottom:24px;right:24px;z-index:999;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,.3);text-decoration:none;transition:transform .2s,box-shadow .2s}
 .wa-btn:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(0,0,0,.4)}
@@ -313,6 +331,7 @@ footer{padding:18px 40px;background:#0d1b2a;display:flex;justify-content:space-b
     <a href="#menu" class="n-link">Menù</a>
     <a href="#biliardo" class="n-link">Biliardo</a>
     <a href="#sport" class="n-link">Sport</a>
+    <a href="#autunno" class="n-link">Autunno</a>
     <a href="#info" class="n-link">Info</a>
     <a href="#prenota" class="n-link">Prenota</a>
   </div>
@@ -325,8 +344,8 @@ footer{padding:18px 40px;background:#0d1b2a;display:flex;justify-content:space-b
 
 <div style="background:linear-gradient(135deg,#0a1628 0%,#1a3a6b 50%,#0a1628 100%);padding:14px 20px;text-align:center;border-bottom:1px solid rgba(212,168,67,.3);">
   <p style="font-size:.75rem;font-weight:500;color:#ffffff;letter-spacing:.05em;">
-    🏆 <strong style="color:#d4a843;">Promo Mondiali in arrivo!</strong> — Rimani aggiornato su offerte esclusive e serate speciali 
-    <a href="https://instagram.com/alcity.ch" target="_blank" style="color:#d4a843;font-weight:700;text-decoration:none;margin-left:6px;">📸 Seguici su @alcity.ch</a>
+    🍂 <strong style="color:#d4a843;">Siete pronti per l'autunno?</strong> — Serate più lunghe, tavoli caldi e la partita in diretta
+    <a href="#autunno" style="color:#d4a843;font-weight:700;text-decoration:none;margin-left:6px;">Scopri di più →</a>
   </p>
 </div>
 
@@ -343,6 +362,7 @@ footer{padding:18px 40px;background:#0d1b2a;display:flex;justify-content:space-b
         <a href="#menu" class="pill" style="text-decoration:none;cursor:pointer;">🍔 Hamburger</a>
         <a href="#biliardo" class="pill" style="text-decoration:none;cursor:pointer;">🎱 Biliardo</a>
         <a href="#sport" class="pill" style="text-decoration:none;cursor:pointer;">📺 Live Sport</a>
+        <a href="#autunno" class="pill pill-season" style="text-decoration:none;cursor:pointer;">🍂 Autunno</a>
         <a href="https://www.ubereats.com" target="_blank" class="pill" style="text-decoration:none;cursor:pointer;">🛵 UberEats</a>
       </div>
       <a href="tel:+41919402537" class="h-btn">📞 Prenota un tavolo</a>
@@ -734,6 +754,35 @@ footer{padding:18px 40px;background:#0d1b2a;display:flex;justify-content:space-b
       <div class="si-item"><div class="si-icon">🏆</div>Grandi eventi</div>
     </div>
     <p style="margin-top:18px;font-size:.8rem;font-weight:400;color:rgba(255,255,255,.85);line-height:1.6;text-shadow:0 1px 8px rgba(0,0,0,.7);">Tutte le partite dell'<strong style="color:#ffffff;font-weight:600;">HC Lugano</strong> in diretta — vieni a tifare con noi.</p>
+  </div>
+</section>
+
+<section id="autunno">
+  <div class="aut-inner">
+    <div class="sec-eye rv" style="color:#d4a843">Stagione nuova</div>
+    <h2 class="sec-title rv" style="color:#ffffff">Siete pronti per <em style="color:#d4a843">l'autunno?</em></h2>
+    <p class="rv" style="text-align:center;font-size:.86rem;font-weight:300;color:rgba(255,255,255,.6);max-width:520px;margin:0 auto;line-height:1.8;">Le giornate si accorciano, le serate si allungano. Da noi si sta al caldo, si mangia bene e non si va mai di fretta.</p>
+    <div class="aut-grid rv">
+      <div class="aut-card">
+        <div class="aut-icon">🍂</div>
+        <div class="aut-title">Sapori della stagione</div>
+        <div class="aut-text">Piatti caldi, <strong>puntine il venerdì e il sabato</strong>, pizze appena sfornate e il pollo al cestello. Comfort food come si deve.</div>
+      </div>
+      <div class="aut-card">
+        <div class="aut-icon">🎱</div>
+        <div class="aut-title">Serate al biliardo</div>
+        <div class="aut-text">Quattro tavoli sempre pronti — <strong>normale, professionale, snooker e carambola</strong>. Nessuna prenotazione: si paga alla cassa e si gioca.</div>
+      </div>
+      <div class="aut-card">
+        <div class="aut-icon">🏒</div>
+        <div class="aut-title">La stagione riparte</div>
+        <div class="aut-text">Hockey, calcio e basket sui nostri schermi. Tutte le partite dell'<strong>HC Lugano</strong> in diretta, con la birra fredda al tavolo.</div>
+      </div>
+    </div>
+    <div class="aut-cta rv">
+      <a href="tel:+41919402537">📞 Prenota il tuo tavolo</a>
+      <p class="aut-note">Per i gruppi meglio chiamare con qualche giorno di anticipo</p>
+    </div>
   </div>
 </section>
 
