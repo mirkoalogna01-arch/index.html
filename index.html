@@ -319,6 +319,39 @@ footer{padding:18px 40px;background:#0d1b2a;display:flex;justify-content:space-b
 .mi-photo{width:170px;height:170px;object-fit:cover;border-radius:50%;flex-shrink:0;margin-left:8px;border:3px solid rgba(212,168,67,.45);box-shadow:0 6px 20px rgba(0,0,0,.18)}
 @media(max-width:600px){.mi-photo{width:120px;height:120px}}
 </style>
+<!-- ===== TEMA HALLOWEEN — si spegne da solo dal 2 novembre. Per toglierlo: cancella da qui a FINE TEMA HALLOWEEN ===== -->
+<script>(function(){if(new Date()<new Date('2026-11-02T00:00:00+01:00'))document.documentElement.classList.add('hw-on')})();</script>
+<style>
+html.hw-on{--hw:#ff8a1f;--hw-d:#c25e0a;--ink:#0b0a0f}
+html.hw-on nav{background:rgba(11,10,15,.96);border-bottom-color:rgba(255,138,31,.18)}
+html.hw-on .n-logo-text{color:#fff}
+html.hw-on .n-link{color:rgba(255,255,255,.55)}html.hw-on .n-link:hover{color:var(--hw)}
+html.hw-on .n-cta{background:var(--hw);color:var(--ink)}html.hw-on .n-cta:hover{background:var(--hw-d)}
+html.hw-on .igp-cta{background:linear-gradient(90deg,#c25e0a,#ff8a1f 50%,#c25e0a);color:var(--ink)}
+html.hw-on #hero{background:var(--ink)}
+html.hw-on #hero::before{background:radial-gradient(ellipse at 75% 30%,rgba(255,138,31,.16) 0%,transparent 55%),radial-gradient(ellipse at 15% 85%,rgba(120,40,160,.14) 0%,transparent 50%)}
+html.hw-on .h-tag,html.hw-on .h-title em,html.hw-on .hs-n,html.hw-on .sec-eye,html.hw-on .mlabel,html.hw-on .mi-price,html.hw-on .s-quote,html.hw-on .bc-price{color:var(--hw)!important}
+html.hw-on .h-btn{background:var(--hw);color:var(--ink)}html.hw-on .h-btn:hover{background:var(--hw-d)}
+html.hw-on .ring{border:1px dashed rgba(255,138,31,.45)}
+html.hw-on .logo-ring-wrap img{box-shadow:0 0 60px rgba(255,138,31,.28)}
+html.hw-on .pill.pill-hw{color:var(--ink);background:var(--hw);border-color:var(--hw);font-weight:600}
+html.hw-on .strip{background:var(--ink);border-top:1px solid rgba(255,138,31,.3);border-bottom:1px solid rgba(255,138,31,.3)}
+html.hw-on .sw{color:var(--hw)}html.hw-on .ss{color:rgba(255,138,31,.45)}
+html.hw-on .tab.active{background:var(--ink);color:var(--hw)}
+html.hw-on footer{background:var(--ink)}
+html.hw-on .cookie-ok{background:var(--hw);color:var(--ink)}html.hw-on .cookie-text a{color:var(--hw)}
+.hw-bats{display:none}
+html.hw-on .hw-bats{display:block;position:absolute;inset:0;pointer-events:none;z-index:2;overflow:hidden}
+.hw-bat{position:absolute;width:34px;height:auto;fill:#000;opacity:.85;filter:drop-shadow(0 0 6px rgba(255,138,31,.35));animation:hwFly 14s ease-in-out infinite}
+.hw-bat:nth-child(2){width:22px;top:22%;left:68%;animation-duration:18s;animation-delay:-5s}
+.hw-bat:nth-child(3){width:16px;top:12%;left:82%;animation-duration:11s;animation-delay:-8s;opacity:.6}
+.hw-bat:nth-child(1){top:30%;left:58%}
+@keyframes hwFly{0%,100%{transform:translate(0,0) scaleX(1)}25%{transform:translate(-40px,-18px) scaleX(.85)}50%{transform:translate(20px,-30px) scaleX(1)}75%{transform:translate(45px,6px) scaleX(.85)}}
+@media(prefers-reduced-motion:reduce){.hw-bat{animation:none}}
+@media(max-width:760px){.hw-bat:nth-child(1){top:8%;left:70%}.hw-bat:nth-child(2){top:4%;left:40%}.hw-bat:nth-child(3){top:14%;left:86%}}
+</style>
+<!-- ===== FINE TEMA HALLOWEEN ===== -->
+
 </head>
 <body>
 
@@ -410,6 +443,7 @@ footer{padding:18px 40px;background:#0d1b2a;display:flex;justify-content:space-b
 
 
 <section id="hero">
+  <div class="hw-bats" aria-hidden="true"><svg class="hw-bat" viewBox="0 0 64 32"><path d="M32 10c2-4 4-6 4-6l1 5 3-2c2 3 9 4 24 6-6 2-9 6-10 11-3-3-7-4-11-2-3 1-5 4-6 7-1-3-3-6-6-7-4-2-8-1-11 2-1-5-4-9-10-11 15-2 22-3 24-6l3 2 1-5s2 2 4 6z"/></svg><svg class="hw-bat" viewBox="0 0 64 32"><path d="M32 10c2-4 4-6 4-6l1 5 3-2c2 3 9 4 24 6-6 2-9 6-10 11-3-3-7-4-11-2-3 1-5 4-6 7-1-3-3-6-6-7-4-2-8-1-11 2-1-5-4-9-10-11 15-2 22-3 24-6l3 2 1-5s2 2 4 6z"/></svg><svg class="hw-bat" viewBox="0 0 64 32"><path d="M32 10c2-4 4-6 4-6l1 5 3-2c2 3 9 4 24 6-6 2-9 6-10 11-3-3-7-4-11-2-3 1-5 4-6 7-1-3-3-6-6-7-4-2-8-1-11 2-1-5-4-9-10-11 15-2 22-3 24-6l3 2 1-5s2 2 4 6z"/></svg></div>
   <div class="hero-wrap">
     <div class="hero-l" style="background:url('img/82f67d2463.jpg') center center/cover no-repeat;position:relative;"><div style="position:absolute;inset:0;background:rgba(5,12,28,.55);z-index:0"></div>
       <div id="status-badge" class="status-badge open"><span class="status-dot"></span><span id="status-text">Aperto ora</span></div>
